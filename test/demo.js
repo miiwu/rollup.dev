@@ -1,5 +1,8 @@
-const bundle = require("../dist/bundle.min.js");
+const main = require("../dist/main.min.js");
+const sub = require("../dist/sub.min.js");
 
-console.log(bundle);
+console.log(main, sub);
 
-console.log(bundle.default);
+console.log(main.method());
+
+console.log(sub.string);

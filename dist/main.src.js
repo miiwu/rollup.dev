@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.bundle = global.bundle || {}, global.bundle.min = {})));
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.main = global.main || {}, global.main.src = {})));
 }(this, (function (exports) { 'use strict';
 
     var string = "hello string";
