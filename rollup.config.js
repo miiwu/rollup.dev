@@ -52,8 +52,8 @@ export default generate(
         { name: "sub", file: ".js" },
     ],
     [
-        { name: ".src", file: `.js`, format: "esm", plugins: [prettier()] },
+        { name: ".src", file: `.js`, format: "esm", plugins: [prettier({ parser: "babel" })] },
         { name: ".min", file: `.mjs`, format: "esm", plugins: [terser()] },
-        { name: ".min", file: `.cjs`, format: "umd", plugins: [terser()] },
+        { name: ".min", file: `.cjs`, format: "umd", plugins: [terser()], exports: "named" },
     ]
 );
