@@ -1,6 +1,6 @@
 var string = "hello sub";
 var sub = {
-  string: string
+    string: string,
 };
 
 export default sub;
