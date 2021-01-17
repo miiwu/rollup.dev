@@ -4,7 +4,8 @@
     "description": "a try on rollup",
     "main": "./src/main.js",
     "scripts": {
-        "test": "node ./test/demo.js",
+        "esm.test": "node ./test/demo.mjs",
+        "cjs.test": "node ./test/demo.cjs",
         "build": "rollup -c"
     },
     "author": "miiwu",
@@ -15,8 +16,10 @@
         "@babel/preset-env": "^7.12.11",
         "@rollup/plugin-babel": "^5.2.2",
         "@rollup/plugin-commonjs": "^17.0.0",
+        "@rollup/plugin-eslint": "^8.0.1",
         "@rollup/plugin-node-resolve": "^11.1.0",
         "core-js": "^3.8.2",
+        "eslint": "^6.8.0",
         "rollup": "^2.36.2",
         "rollup-plugin-clear": "^2.0.7",
         "rollup-plugin-filesize": "^9.1.0",

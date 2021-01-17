@@ -1,5 +1,6 @@
 import clear from "rollup-plugin-clear";
 import babel from "@rollup/plugin-babel";
+import eslint from "@rollup/plugin-eslint";
 import filesize from "rollup-plugin-filesize";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
@@ -33,6 +34,7 @@ function generate(source, config) {
                     targets: ["./dist"],
                 }),
                 babel({ babelHelpers: "runtime", exclude: ["node_modules/**"] }),
+                eslint({ fix: true, throwOnError: true, throwOnWarning: true }),
                 filesize(),
                 commonjs(),
                 resolve(),
