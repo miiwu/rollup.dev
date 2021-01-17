@@ -1,6 +1,9 @@
 {
     "name": "rollup.dev",
     "version": "1.0.0",
+    "keywords": [
+        "rollup"
+    ],
     "description": "a try on rollup",
     "main": "./src/main.js",
     "scripts": {
@@ -11,7 +14,15 @@
         "prettier": "prettier --write src/** --check"
     },
     "author": "miiwu",
-    "license": "",
+    "license": "Apache-2.0",
+    "homepage": "https://github.com/miiwu/rollup.dev#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/miiwu/rollup.dev.git"
+    },
+    "bugs": {
+        "url": "https://github.com/miiwu/rollup.dev/issues"
+    },
     "devDependencies": {
         "@babel/core": "^7.12.10",
         "@babel/plugin-transform-runtime": "^7.12.10",
