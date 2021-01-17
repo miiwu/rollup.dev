@@ -1,8 +1,8 @@
-const main = require("../dist/main.min.cjs");
-const sub = require("../dist/sub.min.cjs");
+const raw = require("../dist/api.main.min.cjs");
+const api = require("../dist/api.main.min.cjs");
 
-console.log(main, sub);
+console.log(raw, api);
 
-console.log(main.method());
+console.log(raw.run());
 
-console.log(sub.string);
+console.log(api.run());

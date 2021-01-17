@@ -1,8 +1,8 @@
-import main from "../dist/main.min.mjs";
-import sub from "../dist/sub.min.mjs";
+import raw from "../dist/raw.main.min.mjs";
+import api from "../dist/raw.main.min.mjs";
 
-console.log(main, sub);
+console.log(raw, api);
 
-console.log(main.method());
+console.log(raw.run());
 
-console.log(sub.string);
+console.log(api.run());

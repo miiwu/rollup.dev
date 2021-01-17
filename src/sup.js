@@ -1,7 +1,7 @@
-export const string = "sub string";
+export const string = "sup string";
 
 export function method() {
-    return "sub method";
+    return "sup method";
 }
 
 export default { string, method };
