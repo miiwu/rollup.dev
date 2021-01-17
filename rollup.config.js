@@ -49,7 +49,8 @@ export default generate(
         { name: "sub", file: ".js" },
     ],
     [
-        { name: ".src", file: `.js`, format: "umd" },
-        { name: ".min", file: `.js`, format: "umd", plugins: [terser()] },
+        { name: ".src", file: `.js`, format: "esm" },
+        { name: ".min", file: `.mjs`, format: "esm", plugins: [terser()] },
+        { name: ".min", file: `.cjs`, format: "umd", plugins: [terser()] },
     ]
 );
