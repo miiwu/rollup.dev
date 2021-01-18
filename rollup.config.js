@@ -17,22 +17,23 @@ import { terser } from "rollup-plugin-terser";
  * |generate(
  * |    [
  * |        {
- * |            // 完整的入口文件为："src/" + this.name + this.file
+ * |            // 完整的入口文件为："src/" + this.dir + this.name + this.file
+ * |            dir: "", // {string} * 入口文件路径，默认为空字符
  * |            name: "main", // {string} 入口文件名
  * |            file: ".js", // {string} 入口文件类型
  * |            spread: { external: [""] }, // {object} * 入口配置的其余部分，会使用展开符展开
- * |            tag(array) { return ["tag.", ...array]; }, // {function} * 修正出口配置的文件名
- * |            plugins(array) { return [...array, commonjs()]; }, // {function} * 修正入口配置的插件，有时候需要注意**顺序**
+ * |            tag(array) { return ["tag.", ...array]; }, // {function} * 修正出口配置的文件名，默认无动作
+ * |            plugins(array) { return [...array, commonjs()]; }, // {function} * 修正入口配置的插件，有时候需要注意**顺序**，默认无动作
  * |        }
  * |    ], // input
  * |    [
  * |        {
- * |            // 完整的出口文件为："dist/" + ([input.name + this.name + this.file]^ | input.tag([...]^))
+ * |            // 完整的出口文件为："dist/" + input.dir + input.tag([input.name + this.name + this.file])
  * |            name: ".src", // {string} 出口文件名的后半部分
  * |            file: `.mjs`, // {string} 出口文件类型
  * |            format: "esm", // {string} * 出口文件模块类型
  * |            ... // {any} * 出口配置的其余部分，自接写即可
- * |        },
+ * |        }
  * |    ], // output
  * |    [
  * |        ... // {any} * 插件配置，自接写即可
@@ -49,17 +50,19 @@ function generate(input, output, plugins) {
     input.forEach((input, index, array) => {
         let temp = [];
 
+        input.dir = input.dir || "";
+
         output.forEach((output) => {
             temp.push(
                 Object.assign({}, output, {
                     name: insert([input.name, output.name], input.tag).join(""),
-                    file: insert(["dist/", input.name, output.name, output.file], input.tag).join(""),
+                    file: insert([`dist/${input.dir}`, input.name, output.name, output.file], input.tag).join(""),
                 })
             );
         }); // 替换 output
 
         array[index] = {
-            input: `src/${input.name}${input.file}`,
+            input: `src/${input.dir}` + input.name + input.file,
             output: temp,
             plugins: insert(plugins || [], input.plugins),
             ...(input.spread || {}),
