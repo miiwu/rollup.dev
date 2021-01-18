@@ -15,19 +15,19 @@ Try on rollup.
 
 ## 输出结果
 
+> Node.js v15.6.0
+
 -   <details>
     <summary>build</summary>
 
     ```js
     > Executing task: npm run build <
-    ```
-
 
     > rollup.dev@1.0.0 build
     > rollup -c
-    
+
     cleared:  ${Your Workspace Folder}\rollup.dev\dist
-    
+
     src/raw.main.js → dist/raw.main.src.ncp.mjs, dist/raw.main.src.ncp.cjs, dist/raw.main.min.ncp.mjs, dist/raw.main.min.ncp.cjs...
     ┌────────────────────────────────────────────┐
     │                                            │
@@ -62,7 +62,7 @@ Try on rollup.
     │                                            │
     └────────────────────────────────────────────┘
     created dist/raw.main.src.ncp.mjs, dist/raw.main.src.ncp.cjs, dist/raw.main.min.ncp.mjs, dist/raw.main.min.ncp.cjs in 1.5s
-    
+
     src/api.main.js → dist/api.main.src.ncp.mjs, dist/api.main.src.ncp.cjs, dist/api.main.min.ncp.mjs, dist/api.main.min.ncp.cjs...
     ┌────────────────────────────────────────────┐
     │                                            │
@@ -97,7 +97,7 @@ Try on rollup.
     │                                            │
     └────────────────────────────────────────────┘
     created dist/api.main.src.ncp.mjs, dist/api.main.src.ncp.cjs, dist/api.main.min.ncp.mjs, dist/api.main.min.ncp.cjs in 622ms
-    
+
     src/raw.main.js → dist/raw.main.src.mjs, dist/raw.main.src.cjs, dist/raw.main.min.mjs, dist/raw.main.min.cjs...
     ┌────────────────────────────────────────┐
     │                                        │
@@ -132,7 +132,7 @@ Try on rollup.
     │                                        │
     └────────────────────────────────────────┘
     created dist/raw.main.src.mjs, dist/raw.main.src.cjs, dist/raw.main.min.mjs, dist/raw.main.min.cjs in 630ms
-    
+
     src/api.main.js → dist/api.main.src.mjs, dist/api.main.src.cjs, dist/api.main.min.mjs, dist/api.main.min.cjs...
     ┌────────────────────────────────────────┐
     │                                        │
@@ -168,7 +168,7 @@ Try on rollup.
     └────────────────────────────────────────┘
     created dist/api.main.src.mjs, dist/api.main.src.cjs, dist/api.main.min.mjs, dist/api.main.min.cjs in 1.6s
     ```
-    
+
     </details>
 
 -   <details>

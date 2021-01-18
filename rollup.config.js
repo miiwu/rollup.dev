@@ -78,7 +78,7 @@ export default generate(
                 array.splice(3, 0, ".ncp");
                 return array;
             },
-        }, // ncp - no commonjs plugins
+        }, // ncp - no commonjs plugin
         {
             name: "api.main",
             file: ".js",
@@ -86,7 +86,7 @@ export default generate(
                 array.splice(3, 0, ".ncp");
                 return array;
             },
-        }, // ncp - no commonjs plugins
+        }, // ncp - no commonjs plugin
         {
             name: "raw.main",
             file: ".js",
