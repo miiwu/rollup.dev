@@ -10,18 +10,17 @@
 })(this, function (exports) {
     "use strict";
 
-    var string = "sup string";
+    const string = "sup string";
 
     function method() {
         return "sub method";
     }
 
-    var run = function run() {
+    const run = function () {
         return string + " " + method();
     };
-    var raw_main = {
-        run: run,
-    };
+
+    var raw_main = { run };
 
     exports.default = raw_main;
     exports.run = run;

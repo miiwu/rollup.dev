@@ -1,1 +1,1 @@
-var r=function(){return"sup string sub method"},t={run:r};export default t;export{r as run};
+const t=function(){return"sup string sub method"};var r={run:t};export default r;export{t as run};

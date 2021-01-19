@@ -74,34 +74,36 @@ function generate(input, output, plugins) {
 
 export default generate(
     [
+        // pure, 无任何兼容支持
         {
             name: "raw.main",
             file: ".js",
-            tag(array) {
-                array.splice(3, 0, ".ncp");
-                return array;
-            },
-        }, // ncp - no commonjs plugin
+        },
         {
             name: "api.main",
             file: ".js",
-            tag(array) {
-                array.splice(3, 0, ".ncp");
-                return array;
-            },
-        }, // ncp - no commonjs plugin
+        },
+        // babel, 兼容支持
         {
             name: "raw.main",
             file: ".js",
+            tag(array) {
+                array.splice(3, 0, ".babel");
+                return array;
+            },
             plugins(array) {
-                return [...array, commonjs()];
+                return [...array, babel({ babelHelpers: "runtime", exclude: ["node_modules/**"] })];
             },
         },
         {
             name: "api.main",
             file: ".js",
+            tag(array) {
+                array.splice(3, 0, ".babel");
+                return array;
+            },
             plugins(array) {
-                return [...array, commonjs()];
+                return [...array, babel({ babelHelpers: "runtime", exclude: ["node_modules/**"] })];
             },
         },
     ],
@@ -115,9 +117,9 @@ export default generate(
         clear({
             targets: ["./dist"],
         }),
-        babel({ babelHelpers: "runtime", exclude: ["node_modules/**"] }),
         eslint({ fix: true }),
         filesize(),
-        resolve(),
+        resolve(), // 一般与 commonjs 成对使用
+        commonjs(), // 一般与 resolve 成对使用
     ]
 );

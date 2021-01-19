@@ -1,15 +1,14 @@
-var string = "sup string";
+const string = "sup string";
 
 function method() {
     return "sub method";
 }
 
-var run = function run() {
+const run = function () {
     return string + " " + method();
 };
-var raw_main = {
-    run: run,
-};
+
+var raw_main = { run };
 
 export default raw_main;
 export { run };

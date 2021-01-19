@@ -8,7 +8,7 @@
               ((global.raw = global.raw || {}),
               (global.raw.main = global.raw.main || {}),
               (global.raw.main.src = global.raw.main.src || {}),
-              (global.raw.main.src.ncp = {}))
+              (global.raw.main.src.babel = {}))
           ));
 })(this, function (exports) {
     "use strict";
